@@ -1,0 +1,22 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<script>
+    var a = []
+    var quantidade = 10
+    alert("Digite "+quantidade+" números.")
+
+    for(i = 1; i <= quantidade; i++) {
+        var resposta = prompt("Digite o número "+i+" :")
+        a.push(Number(resposta))
+     }
+
+    var soma = 0;
+    for (let i = 0; i < quantidade; i++) {
+        soma = soma + a[i];
+    }
+    alert("A soma desses números é: " + soma);
+    
+</script>
+</html>
