@@ -12,18 +12,18 @@
         <input style="font-size:12px;" type="number" id="b"> <br>
         <input style="font-size:12px;" type="number" id="c"> --------- x
 <br>
-    <button onclick="calcular()">Calcular x</button>
+    <input type = "button" value="Calcular X" onclick="calcular()">
     <p id="resultado"></p>
 
     <script>
         function calcular() {
-            var a = document.getElementById('a').value;
-            var b = document.getElementById('b').value;
-            var c = document.getElementById('c').value;
+            let A = a.value;
+            let B = b.value;
+            let C = c.value;
 
-            var x = (b * c) / a;
+            let x = (B * C) / A;
 
-            document.getElementById('resultado').innerText =  x;
+           resultado.innerHTML =  "X é igual a " + x;
         }
     </script>
 
