@@ -29,21 +29,21 @@
         todasListas.forEach(lista => {
             lista.className = todosEscondidos ? "mostra" : "esconde";
         });
-        botao.textContent = todosEscondidos ? "Expandir Todos" : "Recolher Todos";
+        botao.textContent = todosEscondidos ? "Recolher Todos" : "Mostrar Todos" ;
     }
 </script>
 <body>
     <style>
     .mostra {
-        visibility: visible;
+        display: block;
     }
     .esconde {
-        visibility: hidden;
+        display: none;
  }
 </style>
 </body>
 </html>
-<button id="toggleBotao" onclick="mostrarerecolher()">Expandir Todos</button>
+<button id="mostrarerecolher" onclick="mostrarerecolher()">Recolher Todos</button>
 
 <ol>
     <li onclick="mudaVisibilidade('listaTeste1')">Teste1</li>
