@@ -17,7 +17,7 @@
     
     function mostrarerecolher() {
         const todasListas = document.querySelectorAll('ul');
-        const botao = document.getElementById('toggleBotao');
+        const botao = document.getElementById('mostrarerecolher');
         let todosEscondidos = true;
         
         todasListas.forEach(lista => {
@@ -43,7 +43,7 @@
 </style>
 </body>
 </html>
-<button id="toggleBotao" onclick="mostrarerecolher()">Recolher Todos</button>
+<button id="toggleBotao" onclick="mostrarerecolher()">Expandir Todos</button>
 
 <ol>
     <li onclick="mudaVisibilidade('listaTeste1')">Teste1</li>
