@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora HTML</title>
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <style>
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: #05248b;
+            color: white;
+            text-align: center;
+            line-height: 60px;
+            z-index: 1000;
+        }
+        body {
+            padding-top: 80px;
+        }
+    </style>
+    <header>
+        Calculadora com objetos
+    </header>
+    <h2> Digite 2 números e escolha a operação desejada</h2> <br>
+
+    <input style="font-size:30px;" type="number" id="a"> <br>
+    <input style="font-size:30px;" type="number" id="b">
+    <br>
+    <input style="font-size:30px;" type="button" value="+" onclick="soma()">
+    <input style="font-size:30px;" type="button" value="-" onclick="sub()">
+    <input style="font-size:30px;" type="button" value="×" onclick="mult()">
+    <input style="font-size:30px;" type="button" value="÷" onclick="div()">
+    <input style="font-size:30px;" type="button" value="^" onclick="pot()">
+    <button style="font-size:30px;" onclick="limpa()">Limpar Calculadora</button> <br>
+
+    <h2>Histórico de Operações:</h2>
+    <ol id="lista"></ol>
+
+    <script>
+
+
+        function soma() {
+            const operando1 = Number(document.getElementById('a').value);
+            const operando2 = Number(document.getElementById('b').value);
+            const resultado = operando1 + operando2;
+            const operation = createOperation(operando1, operando2, "+", resultado);
+            addToList(operation);
+        }
+
+        function sub() {
+            const operando1 = Number(document.getElementById('a').value);
+            const operando2 = Number(document.getElementById('b').value);
+            const resultado = operando1 - operando2;
+            const operation = createOperation(operando1, operando2, "-", resultado);
+            addToList(operation);
+        }
+
+        function mult() {
+            const operando1 = Number(document.getElementById('a').value);
+            const operando2 = Number(document.getElementById('b').value);
+            const resultado = operando1 * operando2;
+            const operation = createOperation(operando1, operando2, "×", resultado);
+            addToList(operation);
+        }
+
+        function pot() {
+            const operando1 = Number(document.getElementById('a').value);
+            const operando2 = Number(document.getElementById('b').value);
+            const resultado = operando1 ** operando2;
+            const operation = createOperation(operando1, operando2, "^", resultado);
+            addToList(operation);
+        }
+
+        function div() {
+            const operando1 = Number(document.getElementById('a').value);
+            const operando2 = Number(document.getElementById('b').value);
+            
+            if (operando2 === 0) {
+                const listItem = document.createElement("li");
+                listItem.style.fontSize = "20px";
+                listItem.innerHTML = "Erro: divisão por zero!";
+                document.getElementById('lista').appendChild(listItem);
+                return;
+            }
+            
+            const resultado = operando1 / operando2;
+            const operation = createOperation(operando1, operando2, "÷", resultado);
+            addToList(operation);
+        }
+
+        function limpa() {
+            document.getElementById('a').value = "";
+            document.getElementById('b').value = "";
+        }
+    </script>
+</body>
+</html>
