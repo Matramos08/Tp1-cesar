@@ -3,7 +3,6 @@
         const STORE_NAME = 'Operations';
         let db;
 
-        // Open or create the database
         const request = indexedDB.open(DB_NAME, DB_VERSION);
 
         request.onerror = function(event) {
@@ -95,4 +94,5 @@
             listItem.style.fontSize = "20px";
             listItem.innerHTML = `${operation.operando1} ${operation.operacao} ${operation.operando2} = ${operation.resultado}`;
             document.getElementById('lista').appendChild(listItem);
+
         }
