@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMX com API (ola-tp1)</title>
+
+    <meta name="htmx-config" content='{"selfRequestsOnly":false}'>
+
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.7/dist/htmx.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Interação com API</h1>
+
+        <div class="section">
+            <h2>Adicionar Novo Nome</h2>
+
+            <form hx-post="https://ola-tp1.onrender.com/nomes" hx-trigger="click" hx-swap="innerHTML">
+
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome">
+                <form hx-post="https://ola-tp1.onrender.com/nomes" hx-trigger="click" hx-swap="innerHTML"></form>
+                <button type="submit">
+                    Salvar Nome
+                </button>
+
+            </form>
+
+            <h3>Resposta do Servidor (Salvar):</h3>
+            <div id="post-response" class="response-box">
+                Seu nome:
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>2. Listar Nomes Cadastrados</h2>
+
+            <button hx-get="https://ola-tp1.onrender.com/nomes" hx-trigger="click" hx-swap="innerHTML">
+                Carregar Lista de Nomes
+            </button>
+
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
