@@ -1,0 +1,12 @@
+{
+  "name": "server-operacoes-matematicas",
+  "version": "1.0.0",
+  "description": "Servidor Express com rotas para operações matemáticas básicas.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
