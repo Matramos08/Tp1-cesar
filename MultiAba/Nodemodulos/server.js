@@ -22,7 +22,6 @@ app.get('/sobre', (req, res) => {
 app.get('/contato', (req, res) => {
     res.render('contato', { 
         pageTitle: 'Entre em Contato',
-        email: 'exemplo@projeto.com' 
     });
 });
 
@@ -30,3 +29,4 @@ app.listen(PORT, () => {
     console.log(`Servidor rodando em http://localhost:${PORT}`);
 
 });
+
